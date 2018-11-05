@@ -1,0 +1,5 @@
+
+
+
+tests:
+	nosetests test.py

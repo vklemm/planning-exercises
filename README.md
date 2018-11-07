@@ -8,18 +8,18 @@ Please login to [circleci.com](circleci.com) with your github account, go to `Ad
 
 Fork and clone this repository: https://github.com/duckietown/planning-exercises
 
-In the implementation.py implement the equivalent CarDynamics according to the description of Lavalle’s book (see 13.1.2.1 A simple car).
+In the `implementation.py` implement the equivalent CarDynamics according to the description of Lavalle’s book (see 13.1.2.1 A simple car).
 
-Create a class CarDynamics that integrates the dynamics of a car in the pattern of DifferentialDriveDynamics. We provided you with the classes CarCommmands and CarParameters.
+Create a class `CarDynamics` that integrates the dynamics of a car in the pattern of `DifferentialDriveDynamics`. We provided you with the classes `CarCommmands` and `CarParameters`.
 
-CarCommands has two variables:
+`CarCommands` has two variables:
 
- - linear_velocity
- - steering_angle
+ - `linear_velocity`
+ - `steering_angle`
 
-CarParameters has one variable:
+`CarParameters` has one variable:
 
- - wheel_distance
+ - `wheel_distance`
 
 To test your solution run `python test.py` in the repository. If your solution is correct you should see the message: `All tests passed successfully!`
 

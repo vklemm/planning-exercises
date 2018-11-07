@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/GITHUB-USERNAME/planning-exercises.svg?style=svg)](https://circleci.com/gh/GITHUB-USERNAME/planning-exercises)
 
-Please login to [circleci.com](circleci.com) with your github account, go to `Add projects` find `planning-exercises` and click `Set Up Project` and click `Start Building`. Change `GITHUB-USERNAME` in the link above with your github username, in order to automatically test your solution.
+Please login to [circleci.com](circleci.com) with your github account, go to `Add projects` find `planning-exercises`, click `Set Up Project` and click `Start Building`. Change `GITHUB-USERNAME` in the link above with your github username, in order to automatically test your solution.
 
 ## Homework Assignment 4
 

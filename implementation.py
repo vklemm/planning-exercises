@@ -1,9 +1,37 @@
-from duckietown_world import GenericKinematicsSE2
-from duckietown_world.world_duckietown.car_dynamics import  CarCommands, CarParameters
+from duckietown_world import GenericKinematicsSE2,PlatformDynamicsFactory
+from duckietown_serialization_ds1 import Serializable
+from contracts import check_isinstance
 import geometry as geo
+import numpy as np
+
+class CarCommands(Serializable):
+    '''
+        This represents the velocity commands for car
+        kinematics.
+    '''
+
+    def __init__(self, linear_velocity, steering_angle):
+        self.linear_velocity = linear_velocity
+        self.steering_angle = steering_angle
+
+
+
+class CarParameters(PlatformDynamicsFactory, Serializable):
+    '''
+        This class represents the parameters of the ideal differential drive dynamics.
+
+        wheel_distance: distance between front and rear wheels
+
+    '''
+
+    def __init__(self, wheel_distance):
+        self.wheel_distance = wheel_distance
+
+    def initialize(self, c0, t0=0, seed=None):
+        return CarDynamics(self, c0, t0)
+
 
 class CarDynamics(GenericKinematicsSE2):
-
     def __init__(self, parameters, c0, t0):
         """
         :param parameters:  instance of CarParameters
@@ -18,15 +46,14 @@ class CarDynamics(GenericKinematicsSE2):
         """
 
         :param dt:
-        :param commands: an instance of WheelVelocityCommands
+        :param commands: an instance of CarCommands
         :return:
         """
         check_isinstance(commands, CarCommands)
 
-
-        # fill in here
+        # Your code comes here!
         linear = [0,0]
-        angular=  0
+        angular = 0
         # represent this as se(2)
         commands_se2 = geo.se2_from_linear_angular(linear, angular)
 

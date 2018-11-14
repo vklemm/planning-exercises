@@ -53,7 +53,7 @@ class CarDynamics(GenericKinematicsSE2):
 
         # Your code comes here!
         linear = [commands.linear_velocity, 0]
-        angular = commands.linear_velocity/self.parameters.wheel_distance * np.tan(commands.steering_angle)
+        angular = commands.linear_velocity/self.parameters.wheel_distance * np.tan(commands.steering_angle)
         # represent this as se(2)
         commands_se2 = geo.se2_from_linear_angular(linear, angular)
 
